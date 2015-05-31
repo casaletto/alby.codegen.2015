@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5EAA61A0-93EE-45EE-8C8A-EF12D49B585A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>alby.codegen.generator</RootNamespace>
+    <AssemblyName>alby.codegen.generator</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>618</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="alby.core">
+      <HintPath>..\..\alby.core\bin\alby.core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\alby.buildprocess\assemblyInfoVersion\AssemblyInfoVersion.cs">
+      <Link>AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="ColumnInfo.cs" />
+    <Compile Include="DatabaseInfo.cs" />
+    <Compile Include="DataSetHelper.cs" />
+    <Compile Include="DataTableDictionary.cs" />
+    <Compile Include="StoredProcedureParameterInfo.cs" />
+    <Compile Include="StoredProcedureResultsetInfo.cs" />
+    <Compile Include="StoredProcedureRowConstructorBlock.cs" />
+    <Compile Include="DatabaseConstructorBlock.cs" />
+    <Compile Include="DatabaseGenerator.cs" />
+    <Compile Include="QueryGeneratorThreadPoolItem.cs" />
+    <Compile Include="StoredProcedureFactoryExecuteBlock.cs" />
+    <Compile Include="StoredProcedureTableTypeEnumeratorBlock.cs" />
+    <Compile Include="StoredProcGeneratorThreadPoolItem.cs" />
+    <Compile Include="UnitTestGeneratorAssert.cs" />
+    <Compile Include="UnitTestGeneratorAssertPerTable.cs" />
+    <Compile Include="UnitTestGeneratorAssertPerTableThreadPoolItem.cs" />
+    <Compile Include="UnitTestGeneratorDelete.cs" />
+    <Compile Include="UnitTestGeneratorPlumbing.cs" />
+    <Compile Include="UnitTestGeneratorPopulate.cs" />
+    <Compile Include="UnitTestGeneratorPopulateOverridePerTable.cs" />
+    <Compile Include="UnitTestGeneratorPopulateOverridePerTableThreadPoolItem.cs" />
+    <Compile Include="UnitTestGeneratorPopulatePerTable.cs" />
+    <Compile Include="UnitTestGeneratorPopulatePerTableThreadPoolItem.cs" />
+    <Compile Include="ViewGeneratorThreadPoolItem.cs" />
+    <Compile Include="TableGeneratorThreadPoolItem.cs" />
+    <Compile Include="CodeBlockBase.cs" />
+    <Compile Include="ClassBlock.cs" />
+    <Compile Include="ChildObjectBlock.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="StoredProcGenerator.cs" />
+    <Compile Include="TableFactoryForeignKeyMethodBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitTestConstructorBlock.cs" />
+    <Compile Include="ReferentialIntegrityHelper.cs" />
+    <Compile Include="TableFactorySaveListMethodBlock.cs" />
+    <Compile Include="TableFactorySaveMethodBlock.cs" />
+    <Compile Include="ParentObjectBlock.cs" />
+    <Compile Include="TableFactoryPrimaryKeyMethodBlock.cs" />
+    <Compile Include="TableFactoryConstructorBlock.cs" />
+    <Compile Include="UnitTestGenerator.cs" />
+    <Compile Include="ViewFactoryMethodBlock.cs" />
+    <Compile Include="ViewFactoryConstructorBlock.cs" />
+    <Compile Include="RowConstructorBlock.cs" />
+    <Compile Include="QueryFactoryConstructorBlock.cs" />
+    <Compile Include="QueryFactoryMethodBlock.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="NamespaceBlock.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryGenerator.cs" />
+    <Compile Include="TableGenerator.cs" />
+    <Compile Include="ViewGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\alby.codegen.runtime\alby.codegen.runtime.csproj">
+      <Project>{047F04BB-5989-43BA-987E-CB55FF482B0C}</Project>
+      <Name>alby.codegen.runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DatabaseInfo.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
