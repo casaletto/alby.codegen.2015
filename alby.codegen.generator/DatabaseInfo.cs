@@ -60,20 +60,20 @@ namespace alby.codegen.generator
 			}
 
 			sql = @"
-select * from #tables
-select * from #views
-select * from #sp
-select * from #pk
-select * from #fk
-select * from #pk2fk
-select * from #fk2pk
-select * from #tscol
-select * from #idcol
-select * from #compcol
-select * from #spparam
-select * from #tabletype
-select * from #tabletypecol
-" ;
+select * from #tables				order by 1
+select * from #views				order by 1
+select * from #sp						order by 1
+select * from #pk						order by 1, 2, 3, 4, 5, 6
+select * from #fk						order by 1, 2, 3, 4, 6 ,7, 8
+select * from #pk2fk				order by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+select * from #fk2pk				order by 1, 2, 3, 4, 5, 6, 7, 8
+select * from #tscol					order by 1, 2
+select * from #idcol					order by 1, 2
+select * from #compcol			order by 1, 2
+select * from #spparam			order by 1, 2
+select * from #tabletype			order by 1
+select * from #tabletypecol		order by 1, 3
+";
 			using (SqlCommand cmd = new SqlCommand(sql, conn))
 			{
 				cmd.CommandTimeout = Helper.SQL_TIMEOUT;
